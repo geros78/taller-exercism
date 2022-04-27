@@ -9,10 +9,10 @@ def value_of_card(card):
     if card in cards:
         return 10
     if card == 'A':
-        return 1    
+        return 1
     return int(card)
-    
-    pass
+
+
 
 
 def higher_card(card_one, card_two):
@@ -27,7 +27,7 @@ def higher_card(card_one, card_two):
         return card_one
     else:
         return card_two
-    pass
+
 
 
 def value_of_ace(card_one, card_two):
@@ -48,8 +48,6 @@ def value_of_ace(card_one, card_two):
     else:
         return 11
     
-    pass
-
 
 def is_blackjack(card_one, card_two):
     """Determine if the hand is a 'natural' or 'blackjack'.
@@ -63,8 +61,7 @@ def is_blackjack(card_one, card_two):
         return True
     else:
         return False
-    pass
-
+    
 
 def can_split_pairs(card_one, card_two):
     """Determine if a player can split their hand into two hands.
@@ -74,7 +71,6 @@ def can_split_pairs(card_one, card_two):
     """
     return value_of_card(card_one) == value_of_card(card_two)
 
-    pass
 
 
 def can_double_down(card_one, card_two):
@@ -86,4 +82,21 @@ def can_double_down(card_one, card_two):
     double_down = [9, 10, 11]
     return value_of_card(card_one) + value_of_card(card_two) in double_down
 
-    pass
+
+print("Valor de la carta:")
+print(value_of_card('A'))
+
+print("Cual carta es mayor?")
+print(higher_card(8,9))
+
+print("La carta mas ventajosa segun el valor de la mano:")
+print(value_of_ace(2,2))
+
+print("Es blackjack?")
+print(is_blackjack('A','J'))
+
+print("Pudes repartir la baraja de carta en partes?")
+print(can_split_pairs(2,2))
+
+print("Puedes hacer una apuesta doble?")
+print(can_double_down(5, 4))

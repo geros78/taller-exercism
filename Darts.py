@@ -10,4 +10,10 @@ def score(x, y):
         return 5
     else:
         return 10
-    pass
+
+print("Ingrese las cordenadas del dardo para descubrir su puntaje")    
+
+cordenada1 = int(input("Ingrese la Cordenada 1: "))
+cordenada2 = int(input("Ingrese la Cordenada 2: "))
+
+print("Puntos: ", score(cordenada1, cordenada2))

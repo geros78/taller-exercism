@@ -73,4 +73,24 @@ def maybe_double_last(hand):
     if hand[-1] == 11:
         hand[-1] = 22
     return hand
-    
+
+print("El numero de rondas siguientes a la actual")
+print(get_rounds(10))
+
+print("Sumar el total de dos barajas")
+print(concatenate_rounds([10,20,12,11,2],[3,20,12,15,7]))
+
+print("La carta esta dentro de la baraja?")
+print(list_contains_round([10,20,12,11,2], 20))
+
+print("El promedio de la baraja")
+print(card_average([10,20,12,11,2]))
+
+print("La mitad de la baraja es igual al promedio real?")
+print(approx_average_is_average([10,10,12,11,2]))
+
+print("Son iguales los entremedios?")
+print(average_even_is_average_odd([10,10,12,11,2]))
+
+print("Multiplicar la ultima carta de la baraja por 2 si es igual a 11")
+print(maybe_double_last([10,6,12,5,11]))

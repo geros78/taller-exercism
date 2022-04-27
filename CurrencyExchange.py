@@ -1,3 +1,6 @@
+from traceback import print_tb
+
+
 def exchange_money(budget, exchange_rate):
     """
 
@@ -6,7 +9,7 @@ def exchange_money(budget, exchange_rate):
     :return: float - exchanged value of the foreign currency you can receive.
     """
     return float(budget / exchange_rate)
-    pass
+    
 
 
 def get_change(budget, exchanging_value):
@@ -17,7 +20,7 @@ def get_change(budget, exchanging_value):
     :return: float - amount left of your starting currency after exchanging.
     """
     return float (budget - exchanging_value)
-    pass
+   
 
 
 def get_value_of_bills(denomination, number_of_bills):
@@ -28,7 +31,7 @@ def get_value_of_bills(denomination, number_of_bills):
     :return: int - total value of bills you now have.
     """
     return int(denomination * number_of_bills)
-    pass
+    
 
 
 def get_number_of_bills(budget, denomination):
@@ -39,7 +42,7 @@ def get_number_of_bills(budget, denomination):
     :return: int - number of bills after exchanging all your money.
     """
     return budget // denomination
-    pass
+    
 
 
 def exchangeable_value(budget, exchange_rate, spread, denomination):
@@ -54,7 +57,7 @@ def exchangeable_value(budget, exchange_rate, spread, denomination):
     actual_rate = (exchange_rate * (1 + spread/100))
     ex_mo = exchange_money(budget, actual_rate)
     return get_number_of_bills(ex_mo, denomination) * denomination
-    pass
+    
 
 
 def non_exchangeable_value(budget, exchange_rate, spread, denomination):
@@ -69,4 +72,22 @@ def non_exchangeable_value(budget, exchange_rate, spread, denomination):
     actual_rate = (exchange_rate * (1 + spread/100))
     ex_mo = exchange_money(budget, actual_rate)
     return int(ex_mo % denomination)
-    pass 
+
+
+print("Cuanto es el valor del cambio?")
+print(exchange_money(127.5, 1.2))
+
+print("Cuanto es la cantidad que quedo del presupuesto?")
+print(get_change(127.5, 120))
+
+print("Cuanto es el valor todal del cambio de dinero?")
+print(get_value_of_bills(5, 128))
+
+print("Cuanto es la cantidad recibida segun la moneda de nueva circulacion?")
+print(get_number_of_bills(127.5, 5))
+
+print("Cuanto es el valor máximo de la nueva moneda después de calcular el tipo de cambio más el margen?")
+print(exchangeable_value(127.25, 1.20, 10, 20))
+
+print("Cuanto es el valor que no es canjeable debido a la denominación de los billetes?")
+print(non_exchangeable_value(127.25, 1.20, 10, 5))
