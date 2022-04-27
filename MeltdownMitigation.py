@@ -13,7 +13,8 @@ def is_criticality_balanced(temperature, neutrons_emitted):
     """
     return temperature < 800 and neutrons_emitted > 500 and (temperature * neutrons_emitted) < 500000
 
-    pass
+    
+
     
 def reactor_efficiency(voltage, current, theoretical_max_power):
     
@@ -46,7 +47,7 @@ def reactor_efficiency(voltage, current, theoretical_max_power):
         return "red"
     else:
         return "black"
-    pass
+    
     
 def fail_safe(temperature, neutrons_produced_per_second, threshold):
     
@@ -71,5 +72,11 @@ def fail_safe(temperature, neutrons_produced_per_second, threshold):
     else:
         return 'DANGER'
 
-    pass
+print("El reactor tiene un balance critico?")
+print(is_criticality_balanced(600, 800))
 
+print("En que estado se encuentra la eficiencia del reactor?")
+print(reactor_efficiency(0.1,0.9, 0.22))
+
+print("Estado se encuntra el codigo del reactor?")
+print(fail_safe(4.3, 0.45, 2.1))
